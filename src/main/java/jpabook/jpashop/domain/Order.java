@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "orders")
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED) //이렇게하면 기본생성자를 PROTECTED 할수있다. jpa에서는 쓰지말라는뜻
+@NoArgsConstructor(access = AccessLevel.PROTECTED) //이렇게하면 기본생성자를 PROTECTED 할수있다. jpa에서는 쓰지말라는뜻.
 public class Order {
     @Id
     @GeneratedValue
