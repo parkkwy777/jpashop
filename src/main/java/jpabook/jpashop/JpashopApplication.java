@@ -18,7 +18,7 @@ public class JpashopApplication {
 
 		System.out.println("data : =" + data);
 
-		Member member = new Member();
+		//Member member = new Member();
 
 
 	}

@@ -21,12 +21,12 @@ public class MemberRepositoryTest {
         @Rollback(false)
         public void testMember() {
                 Member member = new Member();
-                member.setName("memberA");
+                member.setUsername("memberA");
                 Long savedId = memberRepository.save(member);
                 Member findMember = memberRepository.find(savedId);
                 Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
 
-                Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
+                Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
                 Assertions.assertThat(findMember).isEqualTo(member); //JPA 엔티티 동일성 보장
         }
 }

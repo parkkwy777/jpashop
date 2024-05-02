@@ -31,7 +31,7 @@ public class MemberServiceTest {
     public void 회원가입() throws Exception{
         //given
         Member member = new Member();
-        member.setName("kim");
+        member.setUsername("kim");
 
         //when
         Long saveId = memberService.join(member); //트렌젝션 커밋이 없으면 영속에만 존재하고 insert쿼리 안나감
@@ -46,9 +46,9 @@ public class MemberServiceTest {
     public void 회원체크 () throws Exception{
         //given
         Member member1 = new Member();
-        member1.setName("kim");
+        member1.setUsername("kim");
         Member member2 = new Member();
-        member2.setName("kim");
+        member2.setUsername("kim");
 
         //when
         memberService.join(member1);

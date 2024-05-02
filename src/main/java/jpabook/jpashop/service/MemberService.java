@@ -54,7 +54,7 @@ public class MemberService {
         중복 가입을 방지하는 방법이있다.
         */
 
-        List<Member> findMembers = memberRepository.findByName(member.getName());
+        List<Member> findMembers = memberRepository.findByName(member.getUsername());
         if(!findMembers.isEmpty()){
             throw new IllegalStateException("이미 존재하는 회원입니다.");
         }
