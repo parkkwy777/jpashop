@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
+import static jpabook.jpashop.domain.QMember.member;
+
 @SpringBootTest
 @Transactional
 @Rollback(value = false)
@@ -30,6 +32,9 @@ public class QuerydslApplicationTests {
 
         Assertions.assertThat(result).isEqualTo(hello);
         Assertions.assertThat(result.getId()).isEqualTo(hello.getId());
+
+        long total = query.selectFrom(member).fetchCount();
+        System.out.println("total : " + total);
 
     }
 }
